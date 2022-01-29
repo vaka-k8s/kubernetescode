@@ -22,7 +22,7 @@ node {
 
     stage('Push image') {
         
-        docker.withRegistry('https://docker.io', 'dockerhub') {
+        docker.withRegistry('', 'dockerhub') {
             def customImage = docker.build("tulasiandh/python-image:${env.BUILD_NUMBER}")
             /* Push the container to the custom Registry */
             customImage.push()
